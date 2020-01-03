@@ -7,7 +7,7 @@ const ApiTable = ({entries}) => {
           <thead>
             <tr>
             <th>
-              API
+              Title
             </th>
             <th>
               Description
