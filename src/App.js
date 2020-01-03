@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 
 import './App.css';
+import ApiTable from './components/ApiTable';
 
 function App() {
 
@@ -41,54 +42,8 @@ function App() {
     </fieldset>    
         <button type="submit">Get APIs</button>
       </form>
-      <table>
-      <caption>Public APIs</caption>
-            <thead>
-              <tr>
-              <th>
-                API
-              </th>
-              <th>
-                Description
-              </th>
-              <th>
-                Link
-              </th>
-              <th>
-                Auth
-              </th>
-              <th>
-                HTTPS
-              </th>
-              <th>Cors</th>
-              <th>Category</th>
-              </tr>
-            </thead>
-            <tbody>
-            {
-        // API: "Cat Facts"
-        // Description: "Daily cat facts"
-        // Auth: ""
-        // HTTPS: true
-        // Cors: "no"
-        // Link: "https://alexwohlbruck.github.io/cat-facts/"
-        // Category: "Animals"
-     
-        entries.length > 0 && entries.map(x=>
-        
-        <tr key={x.Link}>
-          <td>{x.API}</td>
-          <td>{x.Description}</td>
-          <td><a target="_blank" href={x.Link}>{x.Link}</a></td>
-          <td>{x.Auth}</td>
-          <td>{x.HTTPS ? "YES":"NO"}</td>
-          <td>{x.Cors}</td>
-          <td>{x.Category}</td>
-        </tr>)
-      }
-            </tbody>
-          </table>
-
+    
+      <ApiTable entries={entries}/>
     </div>
   );
 }

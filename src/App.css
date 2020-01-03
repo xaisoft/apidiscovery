@@ -39,3 +39,8 @@ th, td {
 tr:nth-child(even){
   background-color: tomato;
 }
+
+fieldset {
+  width:200px;
+  padding:10px;
+}
