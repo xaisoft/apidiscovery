@@ -7,11 +7,7 @@ import ApiFormSearch from './components/ApiFormSearch';
 function App() {
 
   const [entries,setEntries] = useState([]);
-  const [title,setTitle] = useState([]);
-  const [description,setDescription] = useState([])
-  const [https,setHttps] = useState(false);
   const [url,setUrl] = useState('https://api.publicapis.org/entries');
-  const [yesHttps,setYesHttps] = useState(false)
   const handleSubmit = async (values) => {
     
     const queryParams = {
@@ -32,7 +28,7 @@ function App() {
   }
   return (
     <div className="App">
-      <ApiFormSearch title={title} handleSubmit={handleSubmit} description={description}/>
+      <ApiFormSearch  handleSubmit={handleSubmit}/>
     
     {entries.length > 0 &&  <ApiTable entries={entries}/> }
     </div>
