@@ -28,8 +28,8 @@ const ApiTable = ({entries}) => {
           <tbody>
           {
    
-      entries.length > 0 && entries.map(entry=>
-        <ApiTableRow entry={entry}/>
+      entries.map(entry=>
+        <ApiTableRow key={entry.Link} entry={entry}/>
       )
     }
           </tbody>

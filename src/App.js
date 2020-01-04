@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 
 import './App.css';
 import ApiTable from './components/ApiTable';
+import ApiFormSearch from './components/ApiFormSearch';
 
 function App() {
 
@@ -11,12 +12,12 @@ function App() {
   const [https,setHttps] = useState(false);
   const [url,setUrl] = useState('https://api.publicapis.org/entries');
   const [yesHttps,setYesHttps] = useState(false)
-  const handleSubmit = async e => {
-    e.preventDefault();
+  const handleSubmit = async (values) => {
+    
     const queryParams = {
-      https:yesHttps,
-      title:title,
-      description:description
+   
+      title:values.title,
+      description:values.description
     }
 
     const urlSearchParams =new URLSearchParams(queryParams);
@@ -31,19 +32,9 @@ function App() {
   }
   return (
     <div className="App">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Title</label><input id="title" type="text" name="title" value={title} onChange={e => setTitle(e.target.value)}/>
-        <label htmlFor="description">Description</label><input id="description" type="text" name="description" value={description} onChange={e => setDescription(e.target.value)}/>
-        <label htmlFor="https">HTTPS</label><input id="https" type="checkbox" value={https} 
-        onChange={e=> setHttps(!https)}></input>
-        <fieldset>      
-        <legend>HTTPS?</legend>      
-        <input type="checkbox" name="yesHttps" value={yesHttps} onChange={()=>setYesHttps(!yesHttps)}/>YES<br/>
-    </fieldset>    
-        <button type="submit">Get APIs</button>
-      </form>
+      <ApiFormSearch title={title} handleSubmit={handleSubmit} description={description}/>
     
-      <ApiTable entries={entries}/>
+    {entries.length > 0 &&  <ApiTable entries={entries}/> }
     </div>
   );
 }
