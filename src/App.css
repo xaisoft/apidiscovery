@@ -10,35 +10,9 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
 }
-th {
-  text-align: left;
-}
 
-table {
-  table-layout: fixed;
-  width:100%;
-  border-collapse: collapse; border: 3px solid purple;
 
-}
 
-thead th:nth-child(1) {
-  width: 15%;
-}
-thead th:nth-child(2) {
-  width: 30%;
-}
-
-thead th:nth-child(3) {
-  width: 30%;
-}
-
-th, td {
-  padding: 20px;
-}
-
-tr:nth-child(even){
-  background-color: tomato;
-}
 
 fieldset {
   width:200px;

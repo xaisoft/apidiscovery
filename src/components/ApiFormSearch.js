@@ -3,8 +3,6 @@ import {useFormik} from 'formik'
 const ApiFormSearch = ({handleSubmit,title,description,https,yesHttps}) => {
 
     const formik = useFormik({initialValues:{title:'',description:''},onSubmit: values => {
-      
-        alert(JSON.stringify(values, null, 2));
         handleSubmit(values);
       },});
 

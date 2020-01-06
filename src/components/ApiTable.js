@@ -1,30 +1,58 @@
 import React from "react";
 import ApiTableRow from "./ApiTableRow";
+import styled from "styled-components";
+
+const Table = styled.table`
+    table-layout: fixed;
+    width:100%;
+    border-collapse: collapse; border: 3px solid purple;
+`
+const TableHeaderCell = styled.th`
+    padding:20px;
+
+    :nth-child(1) {
+        width: 15%;
+
+    :nth-child(2) {
+        width: 30%;
+    }
+
+    :nth-child(3) {
+        width: 30%;
+    }
+}
+`
+
+
+const TableHeader = styled.thead``
+
+
+const TableRow = styled.tr``;
 
 const ApiTable = ({entries}) => {
-    return <table>
+    return <Table>
     <caption>Public APIs</caption>
-          <thead>
-            <tr>
-            <th>
+          <TableHeader>
+            <TableRow>
+            <TableHeaderCell>
               Title
-            </th>
-            <th>
+            </TableHeaderCell>
+            <TableHeaderCell>
               Description
-            </th>
-            <th>
+            </TableHeaderCell>
+            <TableHeaderCell>
               Link
-            </th>
-            <th>
+            </TableHeaderCell>
+            <TableHeaderCell>
               Auth
-            </th>
-            <th>
+            </TableHeaderCell>
+            <TableHeaderCell>
               HTTPS
-            </th>
-            <th>Cors</th>
-            <th>Category</th>
-            </tr>
-          </thead>
+            </TableHeaderCell>
+            <TableHeaderCell>Cors</TableHeaderCell>
+            <TableHeaderCell>Category</TableHeaderCell>
+            </TableRow>
+          </TableHeader>
           <tbody>
           {
    
@@ -33,7 +61,7 @@ const ApiTable = ({entries}) => {
       )
     }
           </tbody>
-        </table>
+        </Table>
 }
 
 export default ApiTable;
