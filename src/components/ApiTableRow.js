@@ -16,7 +16,7 @@ const ApiTableRow = ({entry}) => {
     return <TableRow>
     <TableCell>{entry.API}</TableCell>
     <TableCell>{entry.Description}</TableCell>
-    <TableCell><a target="_blank" href={entry.Link}>Go to API website</a></TableCell>
+    <TableCell><a target="_blank" rel="noopener noreferrer" href={entry.Link}>Go to API website</a></TableCell>
     <TableCell>{entry.Auth}</TableCell>
     <TableCell>{entry.HTTPS ? <FaCheck/>:null}</TableCell>
     <TableCell>{entry.Cors}</TableCell>

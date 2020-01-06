@@ -9,10 +9,15 @@ const ApiFormSearch = ({handleSubmit,title,description,https,yesHttps}) => {
     
     return (
         <form onSubmit={formik.handleSubmit}>
-        <label htmlFor="title">Title</label><input id="title" type="text" name="title" value={formik.values.title}  onChange={formik.handleChange}
-        value={formik.values.title}/>
-        <label htmlFor="description">Description</label><input id="description" type="text" name="description" value={formik.values.description}  onChange={formik.handleChange}
-        value={formik.values.description}/>
+        <label htmlFor="title">Title</label>
+        <input id="title" type="text" name="title" 
+        value={formik.values.title}  
+        onChange={formik.handleChange}/>
+        <label htmlFor="description">Description</label>
+        <input id="description" type="text" name="description" 
+        value={formik.values.description} 
+         onChange={formik.handleChange}
+        />
         {/* <label htmlFor="https">HTTPS</label><input id="https" type="checkbox" value={https} 
         onChange={e=> setHttps(!https)}></input>
         <fieldset>      
